@@ -13,12 +13,6 @@
             max-width: 400px;
             margin-top: 50px;
         }
-        .btn-primary {
-            background-color: #ff0000; /* Rojo */
-        }
-        .btn-primary:hover {
-            background-color: #e60000; /* Rojo más oscuro */
-        }
         .profile-img {
             width: 150px;
             height: 150px;
@@ -45,7 +39,7 @@
                 <label for="upload" class="form-label">Actualizar Foto</label>
                 <input type="file" class="form-control" id="upload" accept="image/*">
             </div>
-            <button id="uploadButton" class="btn btn-outline-primary">Subir Foto</button>
+            <button id="uploadButton" class="btn btn-outline-primary w-100">Subir Foto</button>
             <hr>
             <h5>Editar Información</h5>
             <div class="mb-3">
@@ -58,9 +52,9 @@
             </div>
             <button id="updateButton" class="btn btn-primary w-100">Actualizar Información</button>
         </div>
-        <a href="menu.html" class="btn btn-secondary w-100">Regresar al Menú</a>
+        <button id="backToMenu" class="btn btn-secondary w-100">Regresar al Menú</button>
     </div>
 
-    <script src="js/informacion_user.js"></script>
+    <script src="js/info_personal.js"></script>
 </body>
 </html>

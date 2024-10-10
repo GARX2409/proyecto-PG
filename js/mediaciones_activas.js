@@ -1,5 +1,4 @@
- // Cargar mediaciones desde LocalStorage al cargar la página
- window.onload = function() {
+window.onload = function() {
     const mediations = JSON.parse(localStorage.getItem('mediations')) || [];
     const mediationsList = document.getElementById('mediationsList');
 
@@ -24,7 +23,6 @@
     });
 };
 
-// Función para cambiar el estado de la mediación
 function changeStatus(index) {
     const mediations = JSON.parse(localStorage.getItem('mediations'));
     const currentStatus = mediations[index].estado;
@@ -37,8 +35,19 @@ function changeStatus(index) {
         mediations[index].estado = 'En Proceso';
     }
 
-    // Guarda la lista actualizada en LocalStorage
     localStorage.setItem('mediations', JSON.stringify(mediations));
     alert('Estado actualizado a: ' + mediations[index].estado);
-    window.location.reload(); // Recarga la página para mostrar cambios
+    window.location.reload();
 }
+
+// Regresar al menú según el rol
+document.getElementById('backToMenu').addEventListener('click', function() {
+    const role = localStorage.getItem('role');
+    if (role === 'estudiante') {
+        window.location.href = 'menu_estudiante.html';
+    } else if (role === 'docente') {
+        window.location.href = 'menu_docente.html';
+    } else if (role === 'mediador') {
+        window.location.href = 'menu_mediador.html';
+    }
+});
